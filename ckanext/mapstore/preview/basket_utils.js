@@ -118,7 +118,7 @@ var basket_utils = {
 	getCapabilitiesURL: function(url){
 		var wmsUrl, capabilitiesUrl;
 		if(url.indexOf('data') == -1){
-			wmsUrl = mapstore_utils.cleanUrl(url);
+			wmsUrl = (url.indexOf('geostore') == -1) ? mapstore_utils.cleanUrl(url) : url;
 			capabilitiesUrl = mapstore_utils.getCapabilitiesUrl(wmsUrl);
 		}
 		
